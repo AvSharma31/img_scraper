@@ -61,7 +61,7 @@ def index():
                     client = pymongo.MongoClient("mongodb+srv://snshrivas:Snshrivas@cluster0.ln0bt5m.mongodb.net/?retryWrites=true&w=majority")
                     db = client['image_scrap']
                     review_col = db['image_scrap_data']
-                    review_col.insert_many(img_data)          
+                    review_col.insert_many(img_data)              
 
                     return "image laoded"
                 except Exception as e:
@@ -74,4 +74,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000)
+    app.run(debug=True)
